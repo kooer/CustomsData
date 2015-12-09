@@ -10,8 +10,8 @@ import java.util.concurrent.atomic.AtomicReference;
  */
 public class Utils {
 
-    public static void parseTable(Element theTable) {
-        if (theTable == null) return;
+    public static int parseTable(Element theTable) {
+        if (theTable == null) return 0;
 
         Elements trs = theTable.select("tr");
 
@@ -44,6 +44,8 @@ public class Utils {
             System.out.print(tdSuperVisionCond.text());
             System.out.println();
         }
+
+        return trs.size() - 1;
     }
 
     public static String pureNumberDigit(String s) {
